@@ -1,6 +1,7 @@
 body {
   /* Set the font-family for the entire body to Roboto with a generic family of sans-serif */
   font-family: 'Roboto', sans-serif;
+  margin: 0
   /* Hint: https://developer.mozilla.org/en-US/docs/Web/CSS/font-family */
 }
 
@@ -34,7 +35,7 @@ nav {
   background-color: #103594;
   display: flex;
   align-items: center;
-  height: 3rem;
+  height: 2rem;
 
 }
 
@@ -99,14 +100,16 @@ nav> ul> li > a:hover {
 /* Create a block that targets the search-form class and give it a display of flex */
 .search-form{
   display: flex;
+  flex-wrap: wrap;
 
 }
 /* Notice that each form input is wrapped in a div */
 /* Create a block that targets the input-field class and apply a suitable width and margin */
-.input_field{
-  width: 9rem;
-  margin: 10px;
-  border: rgb(255, 255, 255) solid 15px;
+.input-field{
+  width: fit-content;
+  margin: 2px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* input, select {
@@ -121,12 +124,28 @@ nav> ul> li > a:hover {
 
 input {
   /* Style the form input elements using width, height, padding-left and border-radius */
+  width: 10rem;
+  overflow: hidden;
+  height: 1.5rem;
+  border-radius: 7px;
+  font-size: 10px;
+}
+#datepicker {
+  height: 1.6rem;
+  color: gray;
 }
 
 .nice-select {
   /* Select elements are not imput elements! Therefore we've given the <select> element it's own class  */
   /* They are notoriously difficult to style with css */
   /* In this case you can use width, height, font-size, color, border and border-radius */
+  color: gray;
+  font-size: 10px;
+  border-radius: 7px;
+  height: 1.8rem;
+  border-style: inset;
+  border-width: 2px;
+  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
 }
 
 .search-btn {
@@ -142,11 +161,32 @@ input {
   - border-radius
   - cursor
   */
+  margin-left: 1rem;
+  background: #EC5959;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  height: 2rem;
+  font-size: 10px;
+  width: 3.5rem;
+  transition-duration: 0.4s;
 }
+
+.search-btn:hover {
+  background-color: white;
+  border: 2px solid #EC5959;
+  color: gray;
+  cursor: pointer;
+
+}
+
 
 .container {
   /* The destinations are enclosed in an article element that we want to make a grid */
   /* Set the display property to 'grid' and justify the content */
+  box-sizing: border-box;
+  display: grid;
+  justify-content: center;
 }
 
 .row {
@@ -154,11 +194,17 @@ input {
   /* Use the grid-template-columns property to set each column to 30% */
   /* You can experiment with different units for the width values */
   /* Hint: https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns */
+  grid-template-columns: auto auto auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .section-title {
   /* The <div> with class section-title contains an <h3> child which we want to center */
   /* The easiest way to center child elements is to set the display property to 'flex' and justify the content */
+  display: flex;
+  justify-content: center;
 }
 
 .single-destination {
@@ -166,40 +212,88 @@ input {
   /* Set the overflow to 'hidden' */
   /* The overflow CSS shorthand property sets the desired behaviour for an element's overflow 
     — i.e. when an element's content is too big to fit. In this case, the image is too big too fit. */
+    margin: 6px;
+    overflow: hidden;
+    width: 362px;
 }
 
 img {
   /* Set the max-width property to 100% */
+  max-width: 100%;
 }
 
 /* Let's take the training wheels off. Finish off the page by adding styles to the remaining blocks */
 
 .testimonial-area {
   /* Write your code here */
+  background-color: #383F4F;
+  padding: 3rem 5rem;
+
 }
 
 .single-testmonial{
   /* Write your code here */
+  margin: 1rem;
+  padding: 10px;
+  background-color: #e3f2fc;
+  border-radius: 5px;
+  width: 220px;
+  text-align: center;
+}
+
+.author-thumb > img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .footer {
   /* Write your code here */
+  background-color: #040E27;
+  height: auto;
+  padding: 20px;
+}
+
+.footer-area{
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-area > h3 {
+  color: white;
+  margin-left: 2rem;
 }
 
 .footer-widget p {
   /* Write your code here */
+  color: #ABB1B5;
+  font-size: small;
+  margin-right: 5rem;
+  margin-top: 21px;
+  line-height: 23px;
 }
+
 
 .footer-widget a:hover {
    /* Write your code here */
 }
 
+.footer-widget ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
 .footer-widget ul li {
   /* Write your code here */
+  color: #ABB1B5;
+  padding: 7px;
 }
 
 .footer-widget a {
    /* Write your code here */
+   color: #ABB1B5;
+   font-size: small;
 }
 
 /* Media Queries */
